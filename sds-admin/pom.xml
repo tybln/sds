@@ -6,9 +6,13 @@
     <parent>
         <groupId>com.didiglobal.sds</groupId>
         <artifactId>sds-base</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
+
+    <groupId>com.didiglobal.sds</groupId>
     <artifactId>sds-admin</artifactId>
+
     <name>sds-admin</name>
 
     <url>https://github.com/didi/sds</url>
@@ -91,9 +95,15 @@
                     <mainClass>com.didiglobal.sds.admin.SdsAdminApplication</mainClass>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 
 
     <profiles>
